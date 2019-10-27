@@ -1,11 +1,11 @@
 package justify
 
 import (
-	"strings"
 	"github.com/mattn/go-runewidth"
+	"strings"
 )
 
-func centerLine (cols, lineWidth int, line string) string {
+func centerLine(cols, lineWidth int, line string) string {
 	if lineWidth >= cols {
 		return line
 	}
@@ -21,7 +21,7 @@ func centerLine (cols, lineWidth int, line string) string {
 }
 
 // Center centerizes normal text in the terminal of `cols` columns.
-func Center (cols int, text string) string {
+func Center(cols int, text string) string {
 	lines := strings.Split(text, "\n")
 	centerizedLines := make([]string, len(lines))
 
@@ -33,7 +33,7 @@ func Center (cols int, text string) string {
 }
 
 // CenterASCIIArt centerizes an ASCII Art in the terminal of `cols` columns.
-func CenterASCIIArt (cols int, text string) string {
+func CenterASCIIArt(cols int, text string) string {
 	lines := strings.Split(text, "\n")
 	centerizedLines := make([]string, len(lines))
 	maxLength := 0
