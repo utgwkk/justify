@@ -1,5 +1,5 @@
 builds:
-  - main: cmd/justify/
+  - main: ./cmd/justify
     binary: justify
     goos:
       - windows
