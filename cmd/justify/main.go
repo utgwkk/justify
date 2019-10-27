@@ -13,11 +13,11 @@ import (
 )
 
 func main() {
-	isAsciiArt := flag.Bool("aa", false, "Enable ascii art mode")
+	isASCIIArt := flag.Bool("aa", false, "Enable ascii art mode")
 	flag.Parse()
 	cols := gput.Cols()
 
-	if *isAsciiArt {
+	if *isASCIIArt {
 		buf, err := ioutil.ReadAll(os.Stdin)
 		if err != nil {
 			log.Fatal(err)
