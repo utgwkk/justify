@@ -8,3 +8,8 @@ builds:
     goarch:
       - 386
       - amd64
+
+release:
+  github:
+    owner: utgwkk
+    name: justify
