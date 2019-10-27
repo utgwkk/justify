@@ -15,7 +15,7 @@ jobs:
         name: Set up Go
         uses: actions/setup-go@master
         with:
-          version: 1.12
+          go-version: 1.12
         id: go
       -
         name: Run GoReleaser
