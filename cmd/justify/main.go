@@ -8,14 +8,13 @@ import (
 	"log"
 	"os"
 
-	"github.com/maxmclau/gput"
 	"github.com/utgwkk/justify"
 )
 
 func main() {
 	isASCIIArt := flag.Bool("aa", false, "Enable ascii art mode")
 	flag.Parse()
-	cols := gput.Cols()
+	cols := getCols(os.Stdout.Fd(), 80)
 
 	if *isASCIIArt {
 		buf, err := ioutil.ReadAll(os.Stdin)
