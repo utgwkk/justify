@@ -20,6 +20,7 @@ func centerLine (cols, lineWidth int, line string) string {
 	return padded
 }
 
+// Center centerizes normal text in the terminal of `cols` columns.
 func Center (cols int, text string) string {
 	lines := strings.Split(text, "\n")
 	centerizedLines := make([]string, len(lines))
@@ -31,6 +32,7 @@ func Center (cols int, text string) string {
 	return strings.Join(centerizedLines, "\n")
 }
 
+// CenterASCIIArt centerizes an ASCII Art in the terminal of `cols` columns.
 func CenterASCIIArt (cols int, text string) string {
 	lines := strings.Split(text, "\n")
 	centerizedLines := make([]string, len(lines))
