@@ -5,24 +5,7 @@ import (
 	"github.com/mattn/go-runewidth"
 )
 
-func centerLine (cols int, line string) string {
-	lineWidth := runewidth.StringWidth(line)
-
-	if lineWidth >= cols {
-		return line
-	}
-
-	if lineWidth == 0 {
-		return line
-	}
-
-	leftPad := (cols - lineWidth) / 2
-	padded := strings.Repeat(" ", leftPad) + line
-
-	return padded
-}
-
-func centerLineAA (cols, lineWidth int, line string) string {
+func centerLine (cols, lineWidth int, line string) string {
 	if lineWidth >= cols {
 		return line
 	}
@@ -42,7 +25,7 @@ func Center (cols int, text string) string {
 	centerizedLines := make([]string, len(lines))
 
 	for i, line := range lines {
-		centerizedLines[i] = centerLine(cols, line)
+		centerizedLines[i] = centerLine(cols, runewidth.StringWidth(line), line)
 	}
 
 	return strings.Join(centerizedLines, "\n")
@@ -61,7 +44,7 @@ func CenterAsciiArt (cols int, text string) string {
 	}
 
 	for i, line := range lines {
-		centerizedLines[i] = centerLineAA(cols, maxLength, line)
+		centerizedLines[i] = centerLine(cols, maxLength, line)
 	}
 
 	return strings.Join(centerizedLines, "\n")
