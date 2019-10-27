@@ -1,4 +1,4 @@
-module justify
+module github.com/utgwkk/justify
 
 go 1.12
 
