@@ -22,7 +22,7 @@ func main() {
 			log.Fatal(err)
 		}
 		input := string(buf)
-		fmt.Println(justify.CenterAsciiArt(cols, input))
+		fmt.Println(justify.CenterASCIIArt(cols, input))
 	} else {
 		scanner := bufio.NewScanner(os.Stdin)
 		for scanner.Scan() {

@@ -31,7 +31,7 @@ func Center (cols int, text string) string {
 	return strings.Join(centerizedLines, "\n")
 }
 
-func CenterAsciiArt (cols int, text string) string {
+func CenterASCIIArt (cols int, text string) string {
 	lines := strings.Split(text, "\n")
 	centerizedLines := make([]string, len(lines))
 	maxLength := 0
