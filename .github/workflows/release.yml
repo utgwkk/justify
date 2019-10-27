@@ -25,5 +25,4 @@ jobs:
           args: release --rm-dist --skip-publish
           key: ${{ secrets.YOUR_PRIVATE_KEY }}
         env:
-          GO111MODULE: on
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
