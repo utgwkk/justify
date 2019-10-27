@@ -27,4 +27,4 @@ jobs:
         env:
           GO111MODULE: on
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        working-directory: ./cmd/justify
+        working-directory: /home/runner/work/justify/justify/cmd/justify
