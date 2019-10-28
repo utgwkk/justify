@@ -4,9 +4,8 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"io/ioutil"
-	"log"
 	"os"
+	"strings"
 
 	"github.com/utgwkk/justify"
 )
@@ -17,11 +16,12 @@ func main() {
 	cols := getCols(os.Stdout.Fd(), 80)
 
 	if *isASCIIArt {
-		buf, err := ioutil.ReadAll(os.Stdin)
-		if err != nil {
-			log.Fatal(err)
+		var inputLines []string
+		scanner := bufio.NewScanner(os.Stdin)
+		for scanner.Scan() {
+			inputLines = append(inputLines, scanner.Text())
 		}
-		input := string(buf)
+		input := strings.Join(inputLines, "\n")
 		fmt.Println(justify.CenterASCIIArt(cols, input))
 	} else {
 		scanner := bufio.NewScanner(os.Stdin)
