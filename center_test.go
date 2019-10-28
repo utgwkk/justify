@@ -13,14 +13,14 @@ type testcase struct {
 func TestCenter(t *testing.T) {
 	testcases := []testcase{
 		{
-			cols:     10,
-			input:    "Hello",
-			expected: "  Hello",
+			10,
+			"Hello",
+			"  Hello",
 		},
 		{
-			cols:     10,
-			input:    "Hello\nWorld",
-			expected: "  Hello\n  World",
+			10,
+			"Hello\nWorld",
+			"  Hello\n  World",
 		},
 	}
 	for _, c := range testcases {
