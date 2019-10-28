@@ -22,6 +22,26 @@ func TestCenter(t *testing.T) {
 			"Hello\nWorld",
 			"  Hello\n  World",
 		},
+		{
+			10,
+			"this is very long text that exceeds columns of the terminal",
+			"this is very long text that exceeds columns of the terminal",
+		},
+		{
+			10,
+			"日本語",
+			"  日本語",
+		},
+		{
+			10,
+			"😄🤔",
+			"   😄🤔",
+		},
+		{
+			9,
+			"odd",
+			"   odd",
+		},
 	}
 	for _, c := range testcases {
 		cols := c.cols
